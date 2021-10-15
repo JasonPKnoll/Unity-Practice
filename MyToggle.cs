@@ -15,10 +15,14 @@ public class MyToggle : UdonSharpBehaviour
 
     public override void Interact()
     {
-        foreach(var x in targets)
+        if (targets != null)
         {
-            x.SetActive(!x.activeSelf);
+            foreach (var target in targets)
+            {
+                target.SetActive(!target.activeSelf);
+            }
         }
+
         if (target != null)
         {
             target.SetActive(!target.activeSelf);
